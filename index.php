@@ -5,39 +5,70 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
-$tablaVerdad = [
-    [
-        "x1" => 1,
-        "x2" => 1,
-        "x3" => -1,
-        "T" => 1,
-    ],
-    [
-        "x1" => 1,
-        "x2" => -1,
-        "x3" => -1,
-        "T" => 1,
-    ],
-    [
-        "x1" => -1,
-        "x2" => 1,
-        "x3" => -1,
-        "T" => 1,
-    ],
-    [
-        "x1" => -1,
-        "x2" => -1,
-        "x3" => -1,
-        "T" => -1,
-    ],
-];
+
 
 $peso1 = $_POST['ejercicio'];
 $peso2 = $_POST['horas'];
 $umbral = $_POST['umbral'];
 $aprendizaje = $_POST['aprendizaje'];
+$tabla = $_POST['tablaVerdad'];
 
 
+if ($tabla == '1') {
+    $tablaVerdad = [
+        [
+            "x1" => 1,
+            "x2" => 1,
+            "x3" => -1,
+            "T" => 1,
+        ],
+        [
+            "x1" => 1,
+            "x2" => -1,
+            "x3" => -1,
+            "T" => -1,
+        ],
+        [
+            "x1" => -1,
+            "x2" => 1,
+            "x3" => -1,
+            "T" => -1,
+        ],
+        [
+            "x1" => -1,
+            "x2" => -1,
+            "x3" => -1,
+            "T" => -1,
+        ],
+    ];
+} else {
+    $tablaVerdad = [
+        [
+            "x1" => 1,
+            "x2" => 1,
+            "x3" => -1,
+            "T" => 1,
+        ],
+        [
+            "x1" => 1,
+            "x2" => -1,
+            "x3" => -1,
+            "T" => 1,
+        ],
+        [
+            "x1" => -1,
+            "x2" => 1,
+            "x3" => -1,
+            "T" => 1,
+        ],
+        [
+            "x1" => -1,
+            "x2" => -1,
+            "x3" => -1,
+            "T" => -1,
+        ],
+    ];
+}
 
 do {
     $multiplicacion1 = $peso1 * $tablaVerdad[0]['x1'] + $peso2 * $tablaVerdad[0]['x2'] + $umbral * $tablaVerdad[0]['x3'];
