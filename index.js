@@ -12,7 +12,7 @@ const calcular = async (e) => {
 
         const body = new FormData(formulario);
 
-        const response = await fetch('index.php', {
+        const response = await fetch('ia.php', {
             method: 'POST',
             body
         });
